@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<body>
+<section layout:fragment="content">
+
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Overview</li>
+        </ol>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Lista Twoich posiłków
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Opcje</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Opcje</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <th:block th:each="meal : ${meals}">
+                            <tr>
+                                <td th:text="${meal.name}"/>
+                                <td>
+                                    <a th:href="@{mealDetails(id=${meal.id})}" class="btn btn-primary">Szczegóły</a>
+                                    <!--<a th:href="@{addProduct(id=${product.id})}" class="btn btn-primary">Edytuj</a>-->
+                                    <!--<a th:href="@{delete(id=${product.id})}" class="confirm btn btn-primary">Usuń</a>-->
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+        <a th:href="@{addProduct/}" class="btn btn-primary">Dodaj nowy produkt</a>
+    </div>
+</section>
+</body>
+</html>

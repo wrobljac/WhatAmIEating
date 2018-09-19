@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<body>
+<section layout:fragment="content">
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Dodaj/Edytuj produkt</div>
+            <div class="card-body">
+                <form th:action="@{/products/addProduct}" th:object="${product}" method="POST">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="hidden" th:field="*{id}" th:value="*{id}"/>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{name}" id="name" class="form-control" placeholder="Nazwa produktu" required="required" autofocus="autofocus">
+                                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+                                    <label for="name">Nazwa produktu</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <select  th:field="*{category}" id="category" class="form-control">
+                                        <option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.name}">
+                                        </option>
+                                    </select>
+                                    <!--<label for="productCategory">Kategoria produktu</label>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{calories}" id="calories" class="form-control" placeholder="Kalorie" required="required">
+                                    <p th:if="${#fields.hasErrors('calories')}" th:errors="*{calories}">Name Error</p>
+                                    <label for="calories">Kalorie</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{carbohydrate}" id="carbohydrate" class="form-control" placeholder="Węglowodany" required="required">
+                                    <p th:if="${#fields.hasErrors('carbohydrate')}" th:errors="*{carbohydrate}">Name Error</p>
+                                    <label for="carbohydrate">Węglowodany</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{transFat}" id="transFat" class="form-control" placeholder="Tłuszcze nienasycone" required="required">
+                                    <p th:if="${#fields.hasErrors('transFat')}" th:errors="*{transFat}">Name Error</p>
+                                    <label for="transFat">Tłuszcze nienasycone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{saturatedFat}" id="saturatedFat" class="form-control" placeholder="Tłuszcze nasycone" required="required">
+                                    <p th:if="${#fields.hasErrors('saturatedFat')}" th:errors="*{saturatedFat}">Name Error</p>
+                                    <label for="saturatedFat">Tłuszcze nasycone</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{cholesterol}" id="cholesterol" class="form-control" placeholder="Cholesterol" required="required">
+                                    <p th:if="${#fields.hasErrors('cholesterol')}" th:errors="*{cholesterol}">Name Error</p>
+                                    <label for="cholesterol">Cholesterol</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{dietaryFiber}" id="dietaryFiber" class="form-control" placeholder="Błonnik" required="required">
+                                    <p th:if="${#fields.hasErrors('dietaryFiber')}" th:errors="*{dietaryFiber}">Name Error</p>
+                                    <label for="dietaryFiber">Błonnik</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{protein}" id="protein" class="form-control" placeholder="Białka" required="required">
+                                    <p th:if="${#fields.hasErrors('protein')}" th:errors="*{protein}">Name Error</p>
+                                    <label for="protein">Białka</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{vitaminA}" id="vitaminA" class="form-control" placeholder="Witamina A" required="required">
+                                    <p th:if="${#fields.hasErrors('vitaminA')}" th:errors="*{vitaminA}">Name Error</p>
+                                    <label for="vitaminA">Witamina A</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{vitaminC}" id="vitaminC" class="form-control" placeholder="Witamina C" required="required">
+                                    <p th:if="${#fields.hasErrors('vitaminC')}" th:errors="*{vitaminC}">Name Error</p>
+                                    <label for="vitaminC">Witamina C</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{sodium}" id="sodium" class="form-control" placeholder="Sód" required="required">
+                                    <p th:if="${#fields.hasErrors('sodium')}" th:errors="*{sodium}">Name Error</p>
+                                    <label for="sodium">Sód</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{calcium}" id="calcium" class="form-control" placeholder="Wapno" required="required">
+                                    <p th:if="${#fields.hasErrors('calcium')}" th:errors="*{calcium}">Name Error</p>
+                                    <label for="calcium">Wapno</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{iron}" id="iron" class="form-control" placeholder="Żelazo" required="required">
+                                    <p th:if="${#fields.hasErrors('iron')}" th:errors="*{iron}">Name Error</p>
+                                    <label for="iron">Żelazo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Dodaj</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
+
+
+

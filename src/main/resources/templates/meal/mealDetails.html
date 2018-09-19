@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<body>
+<section layout:fragment="content">
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Sumaryczny szczegółowy skład posilku</div>
+            <div class="card-body">
+                <form th:object="${product}">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{calories}" id="calories" class="form-control" placeholder="Kalorie" disabled="disabled">
+                                    <label for="calories">Kalorie</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{carbohydrate}" id="carbohydrate" class="form-control" placeholder="Węglowodany" disabled="disabled">
+                                    <label for="carbohydrate">Węglowodany</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{transFat}" id="transFat" class="form-control" placeholder="Tłuszcze nienasycone" disabled="disabled">
+                                    <label for="transFat">Tłuszcze nienasycone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{saturatedFat}" id="saturatedFat" class="form-control" placeholder="Tłuszcze nasycone" disabled="disabled">
+                                    <label for="saturatedFat">Tłuszcze nasycone</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{cholesterol}" id="cholesterol" class="form-control" placeholder="Cholesterol" disabled="disabled">
+                                    <label for="cholesterol">Cholesterol</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{dietaryFiber}" id="dietaryFiber" class="form-control" placeholder="Błonnik" disabled="disabled">
+                                    <label for="dietaryFiber">Błonnik</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{protein}" id="protein" class="form-control" placeholder="Białka" disabled="disabled">
+                                    <label for="protein">Białka</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{vitaminA}" id="vitaminA" class="form-control" placeholder="Witamina A" disabled="disabled">
+                                    <label for="vitaminA">Witamina A</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{vitaminC}" id="vitaminC" class="form-control" placeholder="Witamina C" disabled="disabled">
+                                    <label for="vitaminC">Witamina C</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{sodium}" id="sodium" class="form-control" placeholder="Sód" disabled="disabled">
+                                    <label for="sodium">Sód</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{calcium}" id="calcium" class="form-control" placeholder="Wapno" disabled="disabled">
+                                    <label for="calcium">Wapno</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" th:field="*{iron}" id="iron" class="form-control" placeholder="Żelazo" disabled="disabled">
+                                    <label for="iron">Żelazo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
+
+
+

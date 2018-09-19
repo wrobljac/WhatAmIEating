@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<body>
+<section layout:fragment="content">
+
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Zaloguj się</div>
+            <div class="card-body">
+                <form th:action="@{/user/login}" method="POST">
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="text" name="username" id="name" class="form-control" placeholder="Nazwa uzytkownika" required="required" autofocus="autofocus">
+                            <label for="name">Nazwa uzytkownika</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Haslo" required="required">
+                            <label for="password">Haslo</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

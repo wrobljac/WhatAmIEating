@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<body>
+<section layout:fragment="content">
+
+
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Dodaj/Edytuj kategorię</div>
+            <div class="card-body">
+                <form th:action="@{/category/addCategory}" th:object="${category}" method="POST">
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="hidden" th:field="*{id}" th:value="*{id}"/>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" th:field="*{name}" id="inputCategoryName" class="form-control"
+                                   placeholder="Nazwa kategorii" required="required"/>
+                            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+                            <label for="inputCategoryName">Nazwa kategorii</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="text" th:field="*{description}" id="inputCategoryDescription"
+                                   class="form-control" placeholder="Opis kategorii" required="required">
+                            <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Name Error</p>
+                            <label for="inputCategoryDescription">Opis kategorii</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Dodaj</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+</body>
+</html>

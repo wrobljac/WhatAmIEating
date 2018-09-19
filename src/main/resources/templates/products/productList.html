@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<body>
+<section layout:fragment="content">
+
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Overview</li>
+        </ol>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Lista produktów dostępnych w bazie
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Kategoria</th>
+                            <th>Kalorie/100g</th>
+                            <th>Weglowodany/100g</th>
+                            <th>Białka/100g</th>
+                            <th>Dodaj do posiłku</th>
+                            <th>Opcje</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Kategoria</th>
+                            <th>Kalorie/100g</th>
+                            <th>Weglowodany/100g</th>
+                            <th>Białka/100g</th>
+                            <th>Dodaj do posiłku</th>
+                            <th>Opcje</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <th:block th:each="product : ${products}">
+                            <tr>
+                                <td th:text="${product.name}"/>
+                                <td th:text="${product.category?.name}"/>
+                                <td th:text="${product.calories}"/>
+                                <td th:text="${product.carbohydrate}"/>
+                                <td th:text="${product.protein}"/>
+                                <td>
+                                    <form th:action="@{/meal/addProduct}" method="POST">
+
+                                    <div class="form-group">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-label-group">
+                                                    <input type="hidden" name="productId" th:value="${product.id}"/>
+                                                    <input type="number" id="quantity" name="quantity" class="form-control" placeholder="ilosc w gramach" required="required">
+                                                    <label for="quantity">ilosc w gramach</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-label-group">
+                                                    <button class="btn btn-primary btn-block" type="submit">Dodaj</button>
+                                                    <!--<p th:if="${#fields.hasErrors('iron')}" th:errors="*{iron}">Name-->
+                                                        <!--Error</p>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    </form>
+                                </td>
+                                <td>
+                                    <a th:href="@{productDetails(id=${product.id})}" class="btn btn-primary">Szczegóły</a>
+                                    <a th:href="@{addProduct(id=${product.id})}" class="btn btn-primary">Edytuj</a>
+                                    <a th:href="@{delete(id=${product.id})}" class="confirm btn btn-primary">Usuń</a>
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+        <a th:href="@{addProduct/}" class="btn btn-primary">Dodaj nowy produkt</a>
+    </div>
+</section>
+</body>
+</html>
