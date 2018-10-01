@@ -4,13 +4,15 @@ Application for calculating nutrition values of meals
 Disclaimer: App in early development - i defenitly want to continue with it as it feels like good way to further my Java Web knowledge.
 
 WHAT WE GOT SO FAR:  
-User registration/login:
-
-add/edit/delete categories
-
+User registration/login:  
+<img src="https://raw.githubusercontent.com/wrobljac/WhatAmIEating/master/img/register.png"/>
+add/edit/delete categories:  
+<img src="https://raw.githubusercontent.com/wrobljac/WhatAmIEating/master/img/kategorie.png"/>
 add/edit/delete products
-
+<img src="https://raw.githubusercontent.com/wrobljac/WhatAmIEating/master/img/produkty.png"/>
 add/edit/delete/view summary meal
+<img src="https://raw.githubusercontent.com/wrobljac/WhatAmIEating/master/img/posilki.png"/>
+<img src="https://raw.githubusercontent.com/wrobljac/WhatAmIEating/master/img/szczegolyposilku.png"/>
 
 
 Using
