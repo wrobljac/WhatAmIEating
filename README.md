@@ -4,6 +4,7 @@ Application for calculating nutrition values of meals
 Disclaimer: App in early development - i defenitly want to continue with it as it feels like good way to further my Java Web knowledge.
 
 WHAT WE GOT SO FAR:
+
 User registration/login:
 add/edit/delete categories
 
