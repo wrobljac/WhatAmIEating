@@ -16,9 +16,9 @@ add/edit/delete/view summary meal
 
 
 Using
-Spring boot libraries: validation, data-jpa, security, web.
-In addition: hibernate, mysql-conector, jstl, tomcat, mail.
-In the viewing layer: HTML, CSS, JSP, Thymeleaf, Bootstrap, JavaScript, JQuery, ajax.
+Spring boot libraries: validation, data-jpa, security, web.  
+In addition: hibernate, mysql-conector, jstl, tomcat, mail.  
+In the viewing layer: HTML, CSS, JSP, Thymeleaf, Bootstrap, JavaScript, JQuery, ajax.  
 
 
 What im planning to add:
